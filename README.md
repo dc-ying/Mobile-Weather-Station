@@ -15,8 +15,11 @@ Mobile Weather Station based on Arduino and NB-Iot.  (SJTU course project)
 引脚：
 - [21]  SDA
 - [22]  SCL
+
 在库文件中默认定义的传感器I2C地址是0x77，而我使用的时候没有给SD0高电位，因此我们在Adafruit_BMP280.h中，找到下面这一行
+
 bool  begin(uint8_t addr = BMP280_ADDRESS, uint8_t chipid = BMP280_CHIPID);
+
 改为
 bool  begin(uint8_t addr = BMP280_ADDRESS_ALT, uint8_t chipid = BMP280_CHIPID);
 
